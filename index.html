@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty Mall - Lista de Precios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:       #f472b6;
+      --pink-light: #fce7f3;
+      --pink-dark:  #db2777;
+      --rose:       #fb7185;
+      --gold:       #d4a96a;
+      --gold-light: #fef3c7;
+      --cream:      #fff8f5;
+      --gray-100:   #f3f4f6;
+      --gray-400:   #9ca3af;
+      --gray-600:   #4b5563;
+      --gray-800:   #1f2937;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:  0 4px 16px rgba(244,114,182,.18);
+      --shadow-lg:  0 8px 32px rgba(244,114,182,.22);
+      --radius:     14px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--cream);
+      color: var(--gray-800);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 40%, #fce7f3 100%);
+      border-bottom: 1px solid rgba(244,114,182,.2);
+      padding: 28px 20px 24px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .brand-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .brand h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--pink-dark), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -.5px;
+    }
+
+    .brand-sub {
+      font-size: .78rem;
+      color: var(--pink-dark);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    /* ── SEARCH ── */
+    .search-wrap {
+      position: relative;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      pointer-events: none;
+      color: var(--pink);
+    }
+
+    #search {
+      width: 100%;
+      padding: 13px 46px 13px 44px;
+      border: 2px solid rgba(244,114,182,.35);
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: .95rem;
+      background: #fff;
+      color: var(--gray-800);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    #search:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(244,114,182,.15);
+    }
+
+    #search::placeholder { color: var(--gray-400); }
+
+    .clear-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--gray-400);
+      display: none;
+      line-height: 1;
+      padding: 2px;
+    }
+
+    .clear-btn:hover { color: var(--pink-dark); }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      max-width: 900px;
+      margin: 20px auto 0;
+      padding: 0 16px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stat-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 500;
+    }
+
+    .stat-chip.total   { background: var(--pink-light);  color: var(--pink-dark); }
+    .stat-chip.avail   { background: #dcfce7; color: #16a34a; }
+    .stat-chip.out     { background: #fee2e2; color: #dc2626; }
+    .stat-chip.shown   { background: var(--gold-light); color: #92400e; }
+
+    /* ── FILTERS ── */
+    .filters-wrap {
+      max-width: 900px;
+      margin: 14px auto 0;
+      padding: 0 16px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 5px 14px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(244,114,182,.3);
+      background: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: all .18s;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--pink);
+      border-color: var(--pink);
+      color: #fff;
+    }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 900px;
+      margin: 24px auto 48px;
+      padding: 0 16px;
+    }
+
+    /* ── GRID ── */
+    #product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: #fff;
+      border-radius: var(--radius);
+      border: 1.5px solid rgba(244,114,182,.12);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-sm);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--pink), var(--gold));
+      opacity: 0;
+      transition: opacity .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(244,114,182,.3);
+    }
+
+    .card:hover::before { opacity: 1; }
+
+    .card.agotado {
+      background: #fafafa;
+      border-color: #e5e7eb;
+    }
+
+    .card.agotado::before {
+      background: linear-gradient(90deg, #d1d5db, #9ca3af);
+    }
+
+    .card-category {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--pink);
+      min-height: 14px;
+    }
+
+    .card.agotado .card-category { color: var(--gray-400); }
+
+    .card-name {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .card.agotado .card-name { color: var(--gray-400); }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+    }
+
+    .card-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--pink-dark);
+    }
+
+    .card-price .currency {
+      font-size: .72rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      color: var(--gold);
+      margin-left: 3px;
+      letter-spacing: .5px;
+    }
+
+    .badge-agotado {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      background: #fee2e2;
+      color: #dc2626;
+      border-radius: 50px;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .5px;
+    }
+
+    /* ── EMPTY STATE ── */
+    #empty-state {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      grid-column: 1 / -1;
+    }
+
+    #empty-state .empty-icon { font-size: 3.5rem; margin-bottom: 12px; }
+    #empty-state p { color: var(--gray-400); font-size: .95rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: .75rem;
+      color: var(--gray-400);
+      border-top: 1px solid rgba(244,114,182,.1);
+    }
+
+    footer span { color: var(--pink); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      header { padding: 20px 16px 18px; }
+      #product-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    @media (min-width: 600px) {
+      #product-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 800px) {
+      #product-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* ── HIGHLIGHT ── */
+    mark {
+      background: rgba(244,114,182,.25);
+      color: inherit;
+      border-radius: 3px;
+      padding: 0 1px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-icon">🌸</span>
+      <h1>Beauty Mall</h1>
+    </div>
+    <p class="brand-sub">Lista de Precios</p>
+
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input
+        type="search"
+        id="search"
+        placeholder="Buscar producto, marca, categoría…"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="clear-btn" id="clear-btn" title="Limpiar">✕</button>
+    </div>
+  </div>
+</header>
+
+<div class="stats-bar" id="stats-bar">
+  <span class="stat-chip total">🛍 <span id="stat-total">0</span> productos</span>
+  <span class="stat-chip avail">✅ <span id="stat-avail">0</span> disponibles</span>
+  <span class="stat-chip out">⛔ <span id="stat-out">0</span> agotados</span>
+  <span class="stat-chip shown" id="chip-shown" style="display:none">🔎 <span id="stat-shown">0</span> resultados</span>
+</div>
+
+<div class="filters-wrap" id="filters-wrap"></div>
+
+<main>
+  <div id="product-grid">
+    <div id="empty-state">
+      <div class="empty-icon">🔍</div>
+      <p>No se encontraron productos para "<strong id="empty-query"></strong>"</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Actualizado con amor ♥ — <span>Beauty Mall</span>
+</footer>
+
+<script>
+  const CATEGORY_ICONS = {
+    'cejas':           '✏️',
+    'labios':          '💋',
+    'labios / rubor':  '💋',
+    'colores nude':    '💄',
+    'maquillaje':      '💄',
+    'cuidado facial':  '🧴',
+    'accesorios':      '💍',
+    'rubor':           '🌸',
+    'sombras':         '✨',
+    'default':         '💅',
+  };
+
+  function getCatIcon(cat) {
+    if (!cat) return CATEGORY_ICONS.default;
+    const k = cat.toLowerCase();
+    for (const [key, val] of Object.entries(CATEGORY_ICONS)) {
+      if (k.includes(key)) return val;
+    }
+    return CATEGORY_ICONS.default;
+  }
+
+  let allProducts = [];
+  let currentFilter = 'todos';
+
+  async function loadData() {
+    const res = await fetch('assets/json/prices.json');
+    const data = await res.json();
+    allProducts = data.catalog;
+    init();
+  }
+
+  function buildFilters() {
+    const cats = [...new Set(
+      allProducts
+        .filter(p => p.category)
+        .map(p => p.category)
+    )].sort();
+
+    const wrap = document.getElementById('filters-wrap');
+    wrap.innerHTML = '';
+
+    const all = document.createElement('button');
+    all.className = 'filter-btn active';
+    all.textContent = '✨ Todos';
+    all.dataset.cat = 'todos';
+    all.addEventListener('click', () => setFilter('todos', all));
+    // wrap.appendChild(all);
+
+    // cats.forEach(cat => {
+    //   const btn = document.createElement('button');
+    //   btn.className = 'filter-btn';
+    //   btn.textContent = getCatIcon(cat) + ' ' + cat;
+    //   btn.dataset.cat = cat;
+    //   btn.addEventListener('click', () => setFilter(cat, btn));
+    //   wrap.appendChild(btn);
+    // });
+
+    // Add agotados filter
+    // const agot = document.createElement('button');
+    // agot.className = 'filter-btn';
+    // agot.textContent = '⛔ Agotados';
+    // agot.dataset.cat = 'agotado';
+    // agot.addEventListener('click', () => setFilter('agotado', agot));
+    // wrap.appendChild(agot);
+  }
+
+  function setFilter(cat, btn) {
+    currentFilter = cat;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render(document.getElementById('search').value.trim());
+  }
+
+  function highlight(text, query) {
+    if (!query) return escapeHtml(text);
+    const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return escapeHtml(text).replace(new RegExp(`(${escaped})`, 'gi'), '<mark>$1</mark>');
+  }
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+  }
+
+  function normalizeText(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  function matches(p, q) {
+    if (!q) return true;
+    const lower = normalizeText(q);
+    return (
+      normalizeText(p.name).includes(lower) ||
+      normalizeText(p.category).includes(lower) ||
+      normalizeText(p.currency).includes(lower) ||
+      normalizeText(p.status).includes(lower) ||
+      String(p.price || '').includes(lower)
+    );
+  }
+
+  function render(query = '') {
+    const grid = document.getElementById('product-grid');
+    const emptyState = document.getElementById('empty-state');
+    const chipShown = document.getElementById('chip-shown');
+
+    // Filter by category/status
+    let filtered = allProducts.filter(p => {
+      if (currentFilter === 'todos') return true;
+      if (currentFilter === 'agotado') return p.status === 'agotado';
+      return normalizeText(p.category) === normalizeText(currentFilter);
+    });
+
+    // Filter by search
+    filtered = filtered.filter(p => matches(p, query));
+
+    // Clear cards (keep empty-state node)
+    Array.from(grid.children).forEach(el => {
+      if (el.id !== 'empty-state') el.remove();
+    });
+
+    if (filtered.length === 0) {
+      emptyState.style.display = 'block';
+      document.getElementById('empty-query').textContent = query || currentFilter;
+      chipShown.style.display = 'none';
+    } else {
+      emptyState.style.display = 'none';
+
+      filtered.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card' + (p.status === 'agotado' ? ' agotado' : '');
+
+        const catLabel = p.category
+          ? `${getCatIcon(p.category)} ${highlight(p.category, query)}`
+          : '';
+
+        let priceHTML = '';
+        if (p.status === 'agotado') {
+          priceHTML = `<span class="badge-agotado">⛔ Agotado</span>`;
+        } else {
+          priceHTML = `<span class="card-price">
+            ${highlight(String(p.price.toFixed(2)), query)}
+            <span class="currency">${highlight(p.currency, query)}</span>
+          </span>`;
+        }
+
+        card.innerHTML = `
+          <div class="card-category">${catLabel}</div>
+          <div class="card-name">${highlight(p.name, query)}</div>
+          <div class="card-footer">${priceHTML}</div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Shown chip
+      if (query || currentFilter !== 'todos') {
+        chipShown.style.display = 'flex';
+        document.getElementById('stat-shown').textContent = filtered.length;
+      } else {
+        chipShown.style.display = 'none';
+      }
+    }
+  }
+
+  function updateStats() {
+    const total = allProducts.length;
+    const out   = allProducts.filter(p => p.status === 'agotado').length;
+    const avail = total - out;
+    document.getElementById('stat-total').textContent = total;
+    document.getElementById('stat-avail').textContent = avail;
+    document.getElementById('stat-out').textContent   = out;
+  }
+
+  function init() {
+    updateStats();
+    buildFilters();
+    render();
+
+    const searchInput = document.getElementById('search');
+    const clearBtn    = document.getElementById('clear-btn');
+
+    searchInput.addEventListener('input', () => {
+      const q = searchInput.value.trim();
+      clearBtn.style.display = q ? 'block' : 'none';
+      render(q);
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.style.display = 'none';
+      searchInput.focus();
+      render('');
+    });
+  }
+
+  loadData();
+</script>
+</body>
+</html>

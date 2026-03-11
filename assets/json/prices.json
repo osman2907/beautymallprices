@@ -1,0 +1,461 @@
+{
+    "catalog": [
+        {
+            "name": "Lápiz labial Rosetti Push",
+            "category": "Colores Nude",
+            "price": 2.60,
+            "currency": "VES"
+        },
+        {
+            "name": "Delineador para cejas microblanding HANDAIYAN",
+            "category": "Cejas",
+            "price": 4.05,
+            "currency": "VES"
+        },
+        {
+            "name": "Lapiz retractil de cejas fashion MISS ROSE",
+            "category": "Cejas",
+            "price": 3.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Mascarilla de arcilla rosas SADOER",
+            "category": "Cuidado facial",
+            "price": 0.55,
+            "currency": "VES"
+        },
+        {
+            "name": "Lapiz para cejas con sacapuntas 24H SAS",
+            "category": "Cejas",
+            "price": 1.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Gel hidratante antiedad de colageno con aloe vera",
+            "category": "Cuidado facial",
+            "price": 5.95,
+            "currency": "VES"
+        },
+        {
+            "name": "Mousse doble función labios y rubor",
+            "category": "Labios / Rubor",
+            "price": 2.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Lápiz punta de gel de colores Handaiyan",
+            "category": "Maquillaje",
+            "price": 1.60,
+            "currency": "VES"
+        },
+        {
+            "name": "Borlas paquete de 3",
+            "category": "Accesorios",
+            "price": 2.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Sombras matte & shinny nude MISS ROSE",
+            "price": 4.30,
+            "currency": "VES"
+        },
+        {
+            "name": "Labial líquido Hudamoji",
+            "price": 2.60,
+            "currency": "VES"
+        },
+        {
+            "name": "Lápiz punta de gel Miss Rose",
+            "price": 2.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Betun y sombra para cejas ANYLADY",
+            "price": 3.7,
+            "currency": "$"
+        },
+        {
+            "name": "Contorno de ojos colageno antienvejecimiento",
+            "price": 3.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Lápices de labio Kikco",
+            "price": 1.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Base silky Miss Rose",
+            "price": 6.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Kit de brochas mini X10 rosadas MEILI",
+            "price": 7.85,
+            "currency": "VES"
+        },
+        {
+            "name": "Perfilador de cejas x3",
+            "price": 1.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Jabon facial con cepillo de rosas SADOER",
+            "price": 6.20,
+            "currency": "VES"
+        },
+        {
+            "name": "Sérum con ácido hialurónico Ushas",
+            "price": 5.00,
+            "currency": "$"
+        },
+        {
+            "name": "Pega de pestañas vegana AOA",
+            "status": "agotado"
+        },
+        {
+            "name": "Labial en barra pop style ROMANTIC BIRD",
+            "price": 2.60,
+            "currency": "VES"
+        },
+        {
+            "name": "Rubor de corazón Engol Collection",
+            "price": 7.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Pañitos desmaquillantes aloe vera SAS",
+            "price": 5.40,
+            "currency": "VES"
+        },
+        {
+            "name": "Espejo doble de flores",
+            "price": 2.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Anillos",
+            "price": 5.00,
+            "currency": "$"
+        },
+        {
+            "name": "Iluminador liquido queen MISS ROSE",
+            "price": 3.6,
+            "currency": "$"
+        },
+        {
+            "name": "Contornos veganos AOA",
+            "price": 5.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Depilador luxy MANFEI",
+            "price": 2.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Toallas desmaquillantes",
+            "price": 3.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Collar",
+            "price": 4.5,
+            "currency": "$"
+        },
+        {
+            "name": "Rimel born to be queen rosado ROMANTIC BIRD",
+            "price": 3.5,
+            "currency": "$"
+        },
+        {
+            "name": "Iluminador, rubor y contorno HANDAIYAN",
+            "price": 3.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Desmaquillante con vitamina C Ushas",
+            "price": 4.00,
+            "currency": "$"
+        },
+        {
+            "name": "Polvo translúcido Miss Rose",
+            "price": 5.80,
+            "currency": "VES"
+        },
+        {
+            "name": "Rubor 3 en 1 HANDAIYAN",
+            "price": 3.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Brillo labial Engol Collection",
+            "status": "agotado"
+        },
+        {
+            "name": "Kit removedor de puntos negros",
+            "price": 3.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Borlas",
+            "status": "agotado"
+        },
+        {
+            "name": "Base vegana de alta cobertura AOA",
+            "price": 5.5,
+            "currency": "$"
+        },
+        {
+            "name": "Rubor Salomé",
+            "price": 8.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Fijador de maquillaje Miss Rose",
+            "price": 4.00,
+            "currency": "$"
+        },
+        {
+            "name": "Bases Salomé",
+            "price": 6.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Lápiz de cejas retráctil Salomé",
+            "price": 8.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Sombras fantasy ANYLADY",
+            "price": 4.60,
+            "currency": "VES"
+        },
+        {
+            "name": "Rimel transparente nutritivo KRISTEN LEANE",
+            "price": 3.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Polvo suelto Salomé",
+            "price": 7.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Delineador con sello vegano AOA",
+            "price": 4.00,
+            "currency": "$"
+        },
+        {
+            "name": "Mascarillas faciales",
+            "price": 1.00,
+            "currency": "$"
+        },
+        {
+            "name": "Rimel bold thick ROMANTIC BIRD",
+            "price": 3.65,
+            "currency": "VES"
+        },
+        {
+            "name": "Delineador plumon the queens MISS ROSE",
+            "price": 3.10,
+            "currency": "VES"
+        },
+        {
+            "name": "Correctores Salomé",
+            "price": 6.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Labiales hidratante mates Salomé",
+            "price": 5.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Labial vegano AOA",
+            "price": 3.80,
+            "currency": "VES"
+        },
+        {
+            "name": "Rubor AOA Vegano",
+            "price": 4.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Correctores veganos AOA",
+            "price": 5.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Polvo compacto Miss Rose",
+            "price": 4.30,
+            "currency": "VES"
+        },
+        {
+            "name": "Bases de alta cobertura Salomé",
+            "status": "agotado"
+        },
+        {
+            "name": "Polvo compacto Ushas",
+            "price": 3.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Mantequilla corporal de rosas SADOER",
+            "price": 5.95,
+            "currency": "VES"
+        },
+        {
+            "name": "Beauty blender y pulpo limpiador facial",
+            "price": 3.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Sombras Ushas 9 tonos",
+            "price": 3.5,
+            "currency": "$"
+        },
+        {
+            "name": "Brochas para ojos",
+            "price": 1.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Removedor de maquillaje MISS ROSE",
+            "price": 6.20,
+            "currency": "VES"
+        },
+        {
+            "name": "Pulseras",
+            "price": 4.5,
+            "currency": "$"
+        },
+        {
+            "name": "Sérum Karité Aloe Vera y Rosas",
+            "price": 3.00,
+            "currency": "$"
+        },
+        {
+            "name": "Polvo suelto antialérgico AOA",
+            "status": "agotado"
+        },
+        {
+            "name": "Máscara de pestañas Engol Collection",
+            "status": "agotado"
+        },
+        {
+            "name": "Rubor en polvo Salomé",
+            "price": 7.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Delineador de ojos Ushas",
+            "price": 1.5,
+            "currency": "$"
+        },
+        {
+            "name": "Primer Miss Rose",
+            "price": 4.00,
+            "currency": "$"
+        },
+        {
+            "name": "Lápiz retráctil de cejas vegano AOA",
+            "status": "agotado"
+        },
+        {
+            "name": "Desmaquillante bifásico Ushas",
+            "price": 4.5,
+            "currency": "$"
+        },
+        {
+            "name": "Mascarilla de arcilla rosas SADOER",
+            "price": 4.85,
+            "currency": "VES"
+        },
+        {
+            "name": "Polvo de estrellas Engol Collection",
+            "price": 8.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Labiales Rosetto Ushas",
+            "price": 2.00,
+            "currency": "$"
+        },
+        {
+            "name": "Sérum con vitamina C",
+            "price": 5.00,
+            "currency": "$"
+        },
+        {
+            "name": "Delineador Waterproof Engol Collection",
+            "price": 3.7,
+            "currency": "$"
+        },
+        {
+            "name": "Protector solar Kiss Beauty 90 SPF",
+            "price": 3.00,
+            "currency": "$"
+        },
+        {
+            "name": "Corrector de ojeras Engol Collection",
+            "price": 3.5,
+            "currency": "$"
+        },
+        {
+            "name": "Labial en barra crayola matte batom MISS ROSE",
+            "price": 2.20,
+            "currency": "VES"
+        },
+        {
+            "name": "Mascarilla 3 pasos para remover puntos negros",
+            "price": 2.00,
+            "currency": "$"
+        },
+        {
+            "name": "Protector de rimel JIANZHUANG",
+            "price": 2.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Anillos",
+            "price": 6.00,
+            "currency": "$"
+        },
+        {
+            "name": "Gel para cejas ANYLADY",
+            "price": 2.70,
+            "currency": "VES"
+        },
+        {
+            "name": "Hidratante de labios de coco SADOER",
+            "price": 1.50,
+            "currency": "VES"
+        },
+        {
+            "name": "Pulseras",
+            "price": 3.00,
+            "currency": "$"
+        },
+        {
+            "name": "Brillo voluminizador shiny SAS",
+            "price": 3.00,
+            "currency": "VES"
+        },
+        {
+            "name": "Labial liquido matte con glitter KRISTEN LEANNE",
+            "price": 2.70,
+            "currency": "VES"
+        },
+        {
+            "name": "Base de alta cobertura Engol Collection",
+            "price": 6.00,
+            "currency": "$"
+        },
+        {
+            "name": "Cepillo viajero con espejo",
+            "price": 3.00,
+            "currency": "VES"
+        }
+    ]
+}
