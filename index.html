@@ -430,7 +430,7 @@
   let currentFilter = 'todos';
 
   async function loadData() {
-    const res = await fetch('assets/json/prices.json');
+    const res = await fetch('assets/json/prices.json?date=' + Date.now());
     const data = await res.json();
     allProducts = data.catalog;
     init();
